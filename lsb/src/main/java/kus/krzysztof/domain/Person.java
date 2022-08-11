@@ -21,7 +21,7 @@ public class Person {
 	private Set<Person> partner;
 
 	@OneToOne
-	private Person spouse;
+	private Sex sex;
 
 	public String getName() {
 		return name;
@@ -39,16 +39,16 @@ public class Person {
 		this.partner = partner;
 	}
 
-	public Person getSpouse() {
-		return spouse;
-	}
-
-	public void setSpouse(Person spouse) {
-		this.spouse = spouse;
-	}
-
 	public Long getId() {
 		return id;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public void setSex(Sex sex) {
+		this.sex = sex;
 	}
 
 }
