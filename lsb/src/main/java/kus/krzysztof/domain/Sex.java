@@ -12,7 +12,7 @@ public class Sex {
 	private Long id;
 
 	private String sex;
-
+	
 	public String getSex() {
 		return sex;
 	}
