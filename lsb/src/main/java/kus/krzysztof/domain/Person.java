@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class Person {
@@ -16,11 +18,17 @@ public class Person {
 	private Long id;
 
 	private String name;
+	
+	private Long sex_id;
 
 	@ManyToMany
+	@JoinTable(name = "PERSON_TO_PERSON",
+		joinColumns=@JoinColumn(name="PERSON_ID1", referencedColumnName="ID"),
+        inverseJoinColumns=@JoinColumn(name="PERSON_ID2", referencedColumnName="ID"))
 	private Set<Person> partner;
 
 	@OneToOne
+	@JoinColumn(name = "sex_id", referencedColumnName = "ID")
 	private Sex sex;
 
 	public String getName() {
