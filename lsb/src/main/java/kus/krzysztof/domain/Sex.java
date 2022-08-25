@@ -11,6 +11,10 @@ public class Sex {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	private String sex;
 	
 	public String getSex() {
