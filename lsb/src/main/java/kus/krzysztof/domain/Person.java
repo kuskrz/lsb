@@ -39,6 +39,10 @@ public class Person {
 		this.name = name;
 	}
 
+	public Long getSex_id() {
+		return sex_id;
+	}
+
 	public Set<Person> getPartner() {
 		return partner;
 	}
